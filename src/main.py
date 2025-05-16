@@ -1,5 +1,5 @@
 import math
-import numpy
+import numpy as np
 import matplotlib.pyplot as plt
 import brownian as bm
 import random
@@ -11,8 +11,10 @@ Some model limitations, discussed: https://quant.stackexchange.com/questions/364
 Parameter fitting: https://quant.stackexchange.com/questions/36073/how-does-one-calibrate-lambda-in-a-avellaneda-stoikov-market-making-problem
 """
 
+# test
+
 ##########################################
-#       Simulations
+#       Simulations 
 #########################################
 
 n_sim = 100
