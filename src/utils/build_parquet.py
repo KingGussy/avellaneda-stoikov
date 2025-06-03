@@ -1,5 +1,7 @@
-import pandas as pd
 from pathlib import Path
+
+import pandas as pd
+
 
 def load_l2(message_path: str,
             orderbook_path: str,

@@ -1,11 +1,13 @@
 # mm/utils/vol.py
-import pandas as pd
 from functools import lru_cache
+
+import pandas as pd
+
 
 @lru_cache
 def load_sigma(csv_path: str = "dailysigma.csv") -> pd.Series:
     """
-    Return a Series indexed by pd.Timestamp with daily volatility forecasts from our NN model (to be determined)
+    Return a Series indexed by pd.Timestamp with daily volatility forecasts from our NN model
     We'll add a fallback to a constant 1 % daily vol in the case the model can't be found.
 
     Params
