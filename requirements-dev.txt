@@ -1,0 +1,4 @@
+# build & test extras
+Cython>=3.0
+pytest
+pytest-benchmark
