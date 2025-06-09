@@ -21,6 +21,14 @@ def test_full_day_backtest(benchmark):
     qi            = df["qi"].to_numpy()
     sigI          = df["sigma_i"].to_numpy()
 
+
+    dir = df['direction'].to_numpy(dtype=np.int8)   # np. or dtype?
+    typ = df["type"].to_numpy(dtype=np.int8)
+    size = df["size"].to_numpy(dtype=np.int32)
+
+    bid1_sz = df["bid_size_1"].astype(np.int32).to_numpy()
+    ask1_sz = df["ask_size_1"].astype(np.int32).to_numpy()
+
     # Define the day as an int
     date_int = (
         pd.to_datetime(df["time"], unit="s")
@@ -36,6 +44,11 @@ def test_full_day_backtest(benchmark):
         ts, 
         qi, 
         sigI, 
+        bid1_sz,
+        ask1_sz,
+        typ,
+        size,
+        dir,
         latency_us=4
     )
     agent  = VolGuardQIMM(beta=0.8)
